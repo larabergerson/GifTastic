@@ -50,12 +50,74 @@ $(document).on("click", ".disney-button", function() {
     disImage.attr("src", results);
 
     $(".gifspot").append(disImage);
-
+    // My loop is going crazy. Not sure how to limit it's output or cap it.
     for (var i = 0; i < results.length; i++) {
       var disImage = $("<img>");
       disImage.attr("src", gifUrl);
 
       $(".gifspot").append(disImage);
     }
+
+    // if/else to animate and pause the gifs
+    // --------------------------------------------------
+    // Trying to mock this with my own code. This is an example from activity 15 in the AJAX folder.
+    // if (state === "still") {
+    //     var animate = $(this).attr("data-animate");
+    //     $(this).attr("src", animate)
+    //     $(this).attr("data-state", "animate")
+    //   }
+    //   else {
+    //     var still = $(this).attr("data-still");
+    //     $(this).attr("src", still)
+    //     $(this).attr("data-state", "still");
+    //   }
+    //   console.log(state);
+    // ----------------------------------------------------
+
+    // Basically I would create two variable for animate and still and link it to the corresponsing image url that repsond to the click function on the image.
+
+    // ----------------------------------------------------
+
+    // My code draft:
+    // var gifStill = response.data[0].images.original_still.url;
+    // var stillState = giftStill;
+    // disImage.on("click", function() {
+    //   var status = $(this).attr("data-gifStatus");
+    //   console.log(status);
+
+    //   if (status === "still") {
+    //     var animate = $(this).attr(disImage);
+    //   }
+
+    //   var gifStill = response.data[0].images.original_still.url;
+    //   var stillState = giftStill;
+
+    // -----------------------------------------------------------------
+
+    // HERE I want to put my form commands and I would use Activity 10 as a reference point and mock up code like this:
+
+    //  ----------------------------------------------------------------
+    // $("#add-movie").on("click", function(event) {
+    //     event.preventDefault();
+    //     // This line of code will grab the input from the textbox
+    //     var movie = $("#movie-input").val().trim();
+
+    //     // The movie from the textbox is then added to our array
+    //     movies.push(movie);
+
+    //     // Calling renderButtons which handles the processing of our movie array
+    //     renderButtons();
+    //   });
+
+    //   // Adding click event listeners to all elements with a class of "movie"
+    //   $(document).on("click", ".movie", displayMovieInfo);
+
+    //   // Calling the renderButtons function to display the intial buttons
+    //   renderButtons();
+    // -------------------------------------------------------------------
+
+    // HERE: I would create a variable that grabs the user input and pushes it to the top of the page in the form of a button. The button would then activate a gif.
+
+    // -------------------------------------------------------------
   });
 });
