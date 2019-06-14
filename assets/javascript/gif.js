@@ -42,12 +42,20 @@ $(document).on("click", ".disney-button", function() {
   }).then(function(response) {
     // console.log(response);
     // console.log(response.data[0]);
-    console.log(response.data[0].images.fixed_height.url);
+    console.log(response.data[0].images.original.url);
 
-    var gifUrl = response.data[0].images.fixed_height.url;
+    var gifUrl = response.data[0].images.original.url;
+    var results = gifUrl;
     var disImage = $("<img>");
-    disImage.attr("src", gifUrl);
+    disImage.attr("src", results);
 
     $(".gifspot").append(disImage);
+
+    for (var i = 0; i < results.length; i++) {
+      var disImage = $("<img>");
+      disImage.attr("src", gifUrl);
+
+      $(".gifspot").append(disImage);
+    }
   });
 });
